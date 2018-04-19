@@ -1,6 +1,7 @@
 import tkinter as tk
 import database_functions as dbf
 import datetime as dt
+import csv
 
 
 class ManagerApplication(object):
@@ -42,7 +43,6 @@ class ManagerApplication(object):
     def manager_total_day(self):
         dbf.total_day()
         conn = dbf.create_connection('totals.sqlite3')
-
         cur = conn.cursor()
         date = dt.datetime.now().strftime("%y-%m-%d")
         cur.execute('SELECT * FROM totals WHERE date=?', (date,))
@@ -72,6 +72,32 @@ class ManagerApplication(object):
         self.display_window.insert('end', '\nTotal:    ${}'.format(total))
 
         conn.close()
+
+
+def update_menu(menu, item, price):
+    # conn = dbf.create_connection('inventory.sqlite3')
+    # cur = conn.cursor()
+    # cur.execute("ALTER TABLE inventory ADD COLUMN {}".format(item.replace(' ', '')))
+    # conn.commit()
+    # conn.close()
+
+    addition = '\n{}, {}'.format(item, price)
+    file = '{}.csv'.format(menu)
+    with open(file, 'a') as f:
+        f.write(addition)
+
+
+
+update_menu('barmenu', 'Jack Daniels', '5')
+
+
+
+
+
+
+
+
+
 
 
 

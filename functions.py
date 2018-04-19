@@ -9,7 +9,6 @@ def clear_lists():
     lists.current_guest = ''
     lists.server_set = False
     lists.table_set = False
-
     lists.guest_set = False
 
 
@@ -48,4 +47,3 @@ def get_bar_menu():
             price = entry[1].strip('\n')
             lists.drinks.append(entry[0])
             lists.drinks_prices.append(int(price))
-
