@@ -55,7 +55,8 @@ class ServerApplication(object):
         tk.Button(self.keypad, text='Guest 2', command=self.set_guest2).grid(row=2, column=2, sticky='nsew')
         tk.Button(self.keypad, text='Guest 3', command=self.set_guest3).grid(row=3, column=2, sticky='nsew')
 
-        appetizer_functions = [self.app1, self.app2, self.app3, self.app4, self.app5, self.app6]
+        appetizer_functions = [self.app1, self.app2, self.app3, self.app4, self.app5, self.app6, self.app7, self.app8,
+                               self.app9, self.app10]
 
         entree_functions = [self.item1, self.item2, self.item3, self.item4, self.item5, self.item6, self.item7,
                             self.item8, self.item9, self.item10, self.item11, self.item12, self.item13, self.item14,
@@ -98,7 +99,6 @@ class ServerApplication(object):
 
         """Adds entree buttons to GUI"""
         for i in range(len(lists.entrees)):
-
             if i <= 4:
                 entree_buttons[i].grid(row=3, column=3+i, sticky='nsew')
             elif i <= 9:
@@ -108,13 +108,13 @@ class ServerApplication(object):
             elif i <= 19:
                 entree_buttons[i].grid(row=6, column=3+(i-15), sticky='nsew')
             elif i <= 24:
-                entree_buttons[i].grid(row=8, column=3+(i-20), sticky='nsew')
+                entree_buttons[i].grid(row=7, column=3+(i-20), sticky='nsew')
             elif i <= 29:
-                entree_buttons[i].grid(row=9, column=3+(i-25), sticky='nsew')
+                entree_buttons[i].grid(row=8, column=3+(i-25), sticky='nsew')
             elif i <= 34:
-                entree_buttons[i].grid(row=10, column=3+(i-30), sticky='nsew')
+                entree_buttons[i].grid(row=9, column=3+(i-30), sticky='nsew')
             elif i <= 39:
-                entree_buttons[i].grid(row=11, column=3+(i-35), sticky='nsew')
+                entree_buttons[i].grid(row=10, column=3+(i-35), sticky='nsew')
             else:
                 print('Too many items')
 
@@ -199,6 +199,7 @@ class ServerApplication(object):
         dbf.orders()
         dbf.kitchen_orders()
         dbf.bar_orders()
+        dbf.inventory()
         lists.order_number += 1
         f.clear_lists()
         self.clear_windows()
@@ -325,6 +326,26 @@ class ServerApplication(object):
     def app6(self):
         item = lists.appetizers[5]
         price = lists.appetizers_prices[5]
+        self.add_to_order(item, price)
+
+    def app7(self):
+        item = lists.appetizers[6]
+        price = lists.appetizers_prices[6]
+        self.add_to_order(item, price)
+
+    def app8(self):
+        item = lists.appetizers[7]
+        price = lists.appetizers_prices[7]
+        self.add_to_order(item, price)
+
+    def app9(self):
+        item = lists.appetizers[8]
+        price = lists.appetizers_prices[8]
+        self.add_to_order(item, price)
+
+    def app10(self):
+        item = lists.appetizers[9]
+        price = lists.appetizers_prices[9]
         self.add_to_order(item, price)
 
     # Food items
@@ -488,6 +509,46 @@ class ServerApplication(object):
         price = lists.entrees_prices[31]
         self.add_to_order(item, price)
 
+    def item33(self):
+        item = lists.entrees[32]
+        price = lists.entrees_prices[32]
+        self.add_to_order(item, price)
+
+    def item34(self):
+        item = lists.entrees[33]
+        price = lists.entrees_prices[33]
+        self.add_to_order(item, price)
+
+    def item35(self):
+        item = lists.entrees[34]
+        price = lists.entrees_prices[34]
+        self.add_to_order(item, price)
+
+    def item36(self):
+        item = lists.entrees[35]
+        price = lists.entrees_prices[35]
+        self.add_to_order(item, price)
+
+    def item37(self):
+        item = lists.entrees[36]
+        price = lists.entrees_prices[36]
+        self.add_to_order(item, price)
+
+    def item38(self):
+        item = lists.entrees[37]
+        price = lists.entrees_prices[37]
+        self.add_to_order(item, price)
+
+    def item39(self):
+        item = lists.entrees[38]
+        price = lists.entrees_prices[38]
+        self.add_to_order(item, price)
+
+    def item40(self):
+        item = lists.entrees[39]
+        price = lists.entrees_prices[39]
+        self.add_to_order(item, price)
+
     def bar_item1(self):
         item = lists.drinks[0]
         price = lists.drinks_prices[0]
@@ -528,16 +589,8 @@ class ServerApplication(object):
         price = lists.drinks_prices[7]
         self.add_to_order(item, price)
 
-    def bud_light(self):
-        price = 3
-        item = 'Bud Light'
-        self.add_to_order(item, price)
-
 
 if __name__ == "__main__":
-    f.get_appetizers()
-    f.get_entrees()
-    f.get_bar_menu()
     myApp = ServerApplication()
     myApp.root.mainloop()
 
