@@ -20,14 +20,24 @@ entrees = []
 entrees_prices = []
 drinks = []
 drinks_prices = []
-
+per_row = {'AppsPerRow': 3, 'EntreesPerRow': 5, 'DrinksPerRow': 4}
 
 f.get_appetizers()
 f.get_entrees()
 f.get_bar_menu()
+f.get_row_nums()
 
-apps_per_row = 3
-drinks_per_row = 4
+print(per_row)
+
+# apps_per_row = 3
+# entrees_per_row = 5
+# drinks_per_row = 4
+# with open('perRow.csv', 'r') as f:
+#     l = f.readlines()
+#     print(l)
+#     print(l[0][1])
+
+
 
 # use loop to strip spaces from other list to create database menu list
 menu = []

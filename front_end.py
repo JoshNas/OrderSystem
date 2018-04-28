@@ -80,7 +80,7 @@ class ServerApplication(object):
             drink_buttons.append(tk.Button(self.keypad, text=lists.drinks[i], command=bar_functions[i]))
 
         """Adds appetizers buttons to GUI"""
-        if lists.apps_per_row == 3:
+        if lists.per_row['AppsPerRow'] == '3':
             for i in range(len(lists.appetizers)):
                 if i <= 2:
                     appetizer_buttons[i].grid(row=1, column=3 + i, sticky='nsew')
@@ -88,6 +88,16 @@ class ServerApplication(object):
                     appetizer_buttons[i].grid(row=2, column=3 + (i - 3), sticky='nsew')
                 else:
                     print('Too many items')
+
+        elif lists.per_row['AppsPerRow'] == '4':
+            for i in range(len(lists.appetizers)):
+                if i <= 3:
+                    appetizer_buttons[i].grid(row=1, column=3 + i, sticky='nsew')
+                elif i <= 7:
+                    appetizer_buttons[i].grid(row=2, column=3 + (i - 4), sticky='nsew')
+                else:
+                    print('Too many items')
+
         else:
             for i in range(len(lists.appetizers)):
                 if i <= 4:
@@ -98,28 +108,49 @@ class ServerApplication(object):
                     print('Too many items')
 
         """Adds entree buttons to GUI"""
-        for i in range(len(lists.entrees)):
-            if i <= 4:
-                entree_buttons[i].grid(row=3, column=3+i, sticky='nsew')
-            elif i <= 9:
-                entree_buttons[i].grid(row=4, column=3+(i-5), sticky='nsew')
-            elif i <= 14:
-                entree_buttons[i].grid(row=5, column=3+(i-10), sticky='nsew')
-            elif i <= 19:
-                entree_buttons[i].grid(row=6, column=3+(i-15), sticky='nsew')
-            elif i <= 24:
-                entree_buttons[i].grid(row=7, column=3+(i-20), sticky='nsew')
-            elif i <= 29:
-                entree_buttons[i].grid(row=8, column=3+(i-25), sticky='nsew')
-            elif i <= 34:
-                entree_buttons[i].grid(row=9, column=3+(i-30), sticky='nsew')
-            elif i <= 39:
-                entree_buttons[i].grid(row=10, column=3+(i-35), sticky='nsew')
-            else:
-                print('Too many items')
+        if lists.per_row['EntreesPerRow'] == '4':
+            for i in range(len(lists.entrees)):
+                if i <= 3:
+                    entree_buttons[i].grid(row=3, column=3 + i, sticky='nsew')
+                elif i <= 7:
+                    entree_buttons[i].grid(row=4, column=3 + (i - 4), sticky='nsew')
+                elif i <= 11:
+                    entree_buttons[i].grid(row=5, column=3 + (i - 8), sticky='nsew')
+                elif i <= 15:
+                    entree_buttons[i].grid(row=6, column=3 + (i - 12), sticky='nsew')
+                elif i <= 19:
+                    entree_buttons[i].grid(row=7, column=3 + (i - 16), sticky='nsew')
+                elif i <= 23:
+                    entree_buttons[i].grid(row=8, column=3 + (i - 20), sticky='nsew')
+                elif i <= 27:
+                    entree_buttons[i].grid(row=9, column=3 + (i - 24), sticky='nsew')
+                elif i <= 31:
+                    entree_buttons[i].grid(row=10, column=3 + (i - 28), sticky='nsew')
+                else:
+                    print('Too many items')
+        else:
+            for i in range(len(lists.entrees)):
+                if i <= 4:
+                    entree_buttons[i].grid(row=3, column=3+i, sticky='nsew')
+                elif i <= 9:
+                    entree_buttons[i].grid(row=4, column=3+(i-5), sticky='nsew')
+                elif i <= 14:
+                    entree_buttons[i].grid(row=5, column=3+(i-10), sticky='nsew')
+                elif i <= 19:
+                    entree_buttons[i].grid(row=6, column=3+(i-15), sticky='nsew')
+                elif i <= 24:
+                    entree_buttons[i].grid(row=7, column=3+(i-20), sticky='nsew')
+                elif i <= 29:
+                    entree_buttons[i].grid(row=8, column=3+(i-25), sticky='nsew')
+                elif i <= 34:
+                    entree_buttons[i].grid(row=9, column=3+(i-30), sticky='nsew')
+                elif i <= 39:
+                    entree_buttons[i].grid(row=10, column=3+(i-35), sticky='nsew')
+                else:
+                    print('Too many items')
 
         """"Add drinks"""
-        if lists.drinks_per_row == 4:
+        if lists.per_row['DrinksPerRow'] == '4':
             for i in range(len(lists.drinks)):
                 if i <= 3:
                     drink_buttons[i].grid(row=12, column=3 + i, sticky='nsew')

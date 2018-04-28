@@ -47,3 +47,13 @@ def get_bar_menu():
             price = entry[1].strip('\n')
             lists.drinks.append(entry[0])
             lists.drinks_prices.append(int(price))
+
+
+def get_row_nums():
+    with open('perRow.csv') as rows:
+        for row in rows:
+            entry = row.split(',')
+            item = entry[0]
+            num = entry[1].strip('\n').strip(' ')
+            lists.per_row[item] = num
+
