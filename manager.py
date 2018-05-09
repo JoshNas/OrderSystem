@@ -1,7 +1,6 @@
 import tkinter as tk
 import database_functions as dbf
 import datetime as dt
-import lists
 import os
 
 
@@ -74,6 +73,27 @@ class ManagerApplication(object):
         self.year.set(18)
         self.year_selector = tk.OptionMenu(self.keypad, self.year, *years).grid(row=1, column=5, sticky='new')
 
+        tk.Label(self.keypad, text='Month').grid(row=2, column=3, sticky='nsew')
+        self.month2 = tk.StringVar(self.root)
+        self.month2.set(1)  # set the default option
+        self.month_selector = tk.OptionMenu(self.keypad, self.month2, *months).grid(row=3, column=3, sticky='new')
+
+        tk.Label(self.keypad, text='Day').grid(row=2, column=4, sticky='nsew')
+        self.day2 = tk.StringVar(self.root)
+        self.day2.set(1)
+        self.day_selector = tk.OptionMenu(self.keypad, self.day2, *days).grid(row=3, column=4, sticky='new')
+
+        tk.Label(self.keypad, text='Year').grid(row=2, column=5, sticky='nsew')
+        self.year2 = tk.StringVar(self.root)
+        self.year2.set(18)
+        self.year_selector = tk.OptionMenu(self.keypad, self.year2, *years).grid(row=3, column=5, sticky='new')
+
+        tk.Label(self.keypad, text='Tip Out %').grid(row=3, column=1, sticky='nsew')
+        self.tipout = tk.StringVar(self.root)
+        tipout_percent = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+        self.tipout.set(8)
+        self.year_selector = tk.OptionMenu(self.keypad, self.tipout, *tipout_percent).grid(row=4, column=1, sticky='new')
+
         self.display_window = tk.Canvas()
         self.display_window.grid(row=1, column=1, sticky='nsew')
 
@@ -86,7 +106,7 @@ class ManagerApplication(object):
         tk.Button(self.keypad, text='Totals', command=self.get_totals).grid(row=1, column=0, sticky='ne')
         tk.Button(self.keypad, text='Total Day', command=self.manager_total_day).grid(row=1, column=1, sticky='ne')
         tk.Button(self.keypad, text='Total Date', command=self.date_totals).grid(row=1, column=2, sticky='ne')
-
+        tk.Button(self.keypad, text='Date Range', command=self.date_range_totals).grid(row=3, column=2, sticky='ne')
     tip_out_percent = .08
 
     def get_totals(self):
@@ -150,22 +170,33 @@ class ManagerApplication(object):
 
         conn.close()
 
-    def manager_total_day(self):
-        dbf.total_day()
+    def date_range_totals(self):
+        month = self.month.get()
+        if len(month) < 2:
+            month = '0{}'.format(month)
+        day = self.day.get()
+        if len(day) < 2:
+            day = '0{}'.format(day)
+        year = self.year.get()
+        date = '{}-{}-{}'.format(year, month, day)
+
+        month2 = self.month2.get()
+        if len(month2) < 2:
+            month2 = '0{}'.format(month2)
+        day2 = self.day2.get()
+        if len(day2) < 2:
+            day2 = '0{}'.format(day2)
+        year2 = self.year2.get()
+        date2 = '{}-{}-{}'.format(year2, month2, day2)
+
         conn = dbf.create_connection('totals.sqlite3')
         cur = conn.cursor()
-        date = dt.datetime.now().strftime("%y-%m-%d")
-        cur.execute('SELECT * FROM totals WHERE date=?', (date,))
-
+        cur.execute('SELECT * FROM totals WHERE date BETWEEN ? AND ?', (date, date2))
         rows = cur.fetchall()
 
         server1_total = 0
         server2_total = 0
         server3_total = 0
-
-        server1_tipout = server1_total * self.tip_out_percent
-        server2_tipout = server2_total * self.tip_out_percent
-        server3_tipout = server3_total * self.tip_out_percent
 
         for row in rows:
             server1_total += row[1]
@@ -175,7 +206,42 @@ class ManagerApplication(object):
         total = server1_total + server2_total + server3_total
 
         self.dis_window.delete(1.0, 'end')
-        self.dis_window.insert('end', '          TOTAL      TIP OUT'.format(server1_total, server1_tipout))
+        self.dis_window.insert('end', '          TOTAL'.format(server1_total))
+        self.dis_window.insert('end', '\nServer 1: ${}'.format(server1_total))
+        self.dis_window.insert('end', '\nServer 2: ${}'.format(server2_total))
+        self.dis_window.insert('end', '\nServer 3: ${}'.format(server3_total))
+        self.dis_window.insert('end', '\nTotal:    ${}'.format(total))
+
+        conn.close()
+
+    def manager_total_day(self):
+        dbf.total_day()
+        conn = dbf.create_connection('totals.sqlite3')
+        cur = conn.cursor()
+        date = dt.datetime.now().strftime("%y-%m-%d")
+        cur.execute('SELECT * FROM totals WHERE date=?', (date,))
+
+        rows = cur.fetchall()
+
+        tipout = int(self.tipout.get())
+
+        server1_total = 0
+        server2_total = 0
+        server3_total = 0
+
+        for row in rows:
+            server1_total += row[1]
+            server2_total += row[2]
+            server3_total += row[3]
+
+        server1_tipout = server1_total * (tipout / 100)
+        server2_tipout = server2_total * (tipout / 100)
+        server3_tipout = server3_total * (tipout / 100)
+
+        total = server1_total + server2_total + server3_total
+
+        self.dis_window.delete(1.0, 'end')
+        self.dis_window.insert('end', '          SALES      TIP OUT'.format(server1_total, server1_tipout))
         self.dis_window.insert('end', '\nServer 1: ${}     ${}'.format(server1_total, server1_tipout))
         self.dis_window.insert('end', '\nServer 2: ${}     ${}'.format(server2_total, server2_tipout))
         self.dis_window.insert('end', '\nServer 3: ${}     ${}'.format(server3_total, server3_tipout))
@@ -205,17 +271,6 @@ class ManagerApplication(object):
             with open(menu, 'a') as f:
                 addition = '\n{}'.format(addition)
                 f.write(addition)
-
-        # conn = dbf.create_connection('inventory.sqlite3')
-        # cur = conn.cursor()
-        # cur.execute("ALTER TABLE inventory ADD COLUMN {}".format(item.replace(' ', '')))
-        # conn.commit()
-        # conn.close()
-
-        # addition = '\n{}, {}'.format(item, price)
-        # file = '{}.csv'.format(menu)
-        # with open(file, 'a') as f:
-        #     f.write(addition)
 
     def set_num_per_rows(self):
         with open('perRow.csv', 'w') as f:
