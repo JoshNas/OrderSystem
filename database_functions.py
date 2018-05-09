@@ -167,9 +167,9 @@ def kitchen_orders():
         item = spaced_item.strip()
         if item in lists.entrees or item in lists.appetizers:
             order += item+' \n'
-
-    cur.execute("INSERT INTO kitchen_orders (number, time, server, tabl, items) VALUES (?, ?, ?, ?, ?)",
-                (ordernum, time, lists.server, lists.table, order))
+    if order:
+        cur.execute("INSERT INTO kitchen_orders (number, time, server, tabl, items) VALUES (?, ?, ?, ?, ?)",
+                    (ordernum, time, lists.server, lists.table, order))
     conn.commit()
     conn.close()
 
@@ -193,9 +193,9 @@ def bar_orders():
         item = spaced_item.strip()
         if item in lists.drinks:
             order += item+' \n'
-
-    cur.execute("INSERT INTO bar_orders (number, time, server, tabl, items) VALUES (?, ?, ?, ?, ?)",
-                (ordernum, time, lists.server, lists.table, order))
+    if order:
+        cur.execute("INSERT INTO bar_orders (number, time, server, tabl, items) VALUES (?, ?, ?, ?, ?)",
+                    (ordernum, time, lists.server, lists.table, order))
     conn.commit()
     conn.close()
 
