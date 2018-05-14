@@ -27,18 +27,6 @@ f.get_entrees()
 f.get_bar_menu()
 f.get_row_nums()
 
-print(per_row)
-
-# apps_per_row = 3
-# entrees_per_row = 5
-# drinks_per_row = 4
-# with open('perRow.csv', 'r') as f:
-#     l = f.readlines()
-#     print(l)
-#     print(l[0][1])
-
-
-
 # use loop to strip spaces from other list to create database menu list
 menu = []
 
