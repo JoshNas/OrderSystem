@@ -1,6 +1,5 @@
 import functions as f
 
-test = 'test33'
 order = []
 total = 0
 order_number = 1
