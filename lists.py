@@ -1,5 +1,6 @@
 import functions as f
 
+test = 'test'
 order = []
 total = 0
 order_number = 1
@@ -21,6 +22,7 @@ entrees_prices = []
 drinks = []
 drinks_prices = []
 per_row = {'AppsPerRow': 3, 'EntreesPerRow': 5, 'DrinksPerRow': 4}
+num_servers = 6
 
 f.get_appetizers()
 f.get_entrees()

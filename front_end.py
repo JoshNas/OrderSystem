@@ -8,7 +8,7 @@ class ServerApplication(object):
     def __init__(self):
         self.root = tk.Tk()
         self.root.geometry('1080x760')
-        self.root.title("Christoper's Fish House")
+        self.root.title("Your Resturants Name")
 
         self.message = tk.Text(self.root, height=1, width=80)
         self.message.grid(row=0, column=0)
@@ -29,6 +29,12 @@ class ServerApplication(object):
         self.price_window.grid(row=2, column=0, columnspan=12)
 
         """Buttons"""
+
+
+
+
+
+
         tk.Button(self.keypad, text='Server1', command=self.set_server1).grid(row=1, column=0, sticky='nsew')
         tk.Button(self.keypad, text='Server2', command=self.set_server2).grid(row=2, column=0, sticky='nsew')
         tk.Button(self.keypad, text='Server3', command=self.set_server3).grid(row=3, column=0, sticky='nsew')
@@ -72,12 +78,15 @@ class ServerApplication(object):
         drink_buttons = []
         """"Create entree buttons"""
         for i in range(len(lists.appetizers)):
-            appetizer_buttons.append(tk.Button(self.keypad, text=lists.appetizers[i], command=appetizer_functions[i]))
+            appetizer_buttons.append(tk.Button(self.keypad, text=lists.appetizers[i], command=appetizer_functions[i],
+                                               bg='purple1'))
         for i in range(len(lists.entrees)):
-            entree_buttons.append(tk.Button(self.keypad, text=lists.entrees[i], command=entree_functions[i]))
+            entree_buttons.append(tk.Button(self.keypad, text=lists.entrees[i], command=entree_functions[i],
+                                            bg='royal blue'))
         """Create drink buttons"""
         for i in range(len(lists.drinks)):
-            drink_buttons.append(tk.Button(self.keypad, text=lists.drinks[i], command=bar_functions[i]))
+            drink_buttons.append(tk.Button(self.keypad, text=lists.drinks[i], command=bar_functions[i],
+                                           bg='goldenrod1'))
 
         """Adds appetizers buttons to GUI"""
         if lists.per_row['AppsPerRow'] == '3':
