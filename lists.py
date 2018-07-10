@@ -1,6 +1,9 @@
 import functions as f
 
-test = 'test33'
+<<<<<<< HEAD
+=======
+test = 'test35553'
+>>>>>>> e0b0ea6432ac8250155e619b1d176a5204973e62
 order = []
 total = 0
 order_number = 1
