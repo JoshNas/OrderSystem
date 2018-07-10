@@ -1,6 +1,6 @@
 import functions as f
 
-
+test = 'remove'
 order = []
 total = 0
 order_number = 1
