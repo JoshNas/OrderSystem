@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b915f2a-b751-4981-b410-3097b3ec8780" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/bar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar_orders.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barmenu.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/button_placement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/click.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/colors.scheme.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete_orders.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debugger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.codeinsight.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entrees.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filetypes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finished_orders.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getclick.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/github_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ide.general.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdk.table.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitchen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitchen_orders.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perRow.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totals.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totals2.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui.lnf.xml" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="tester.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/tester.py" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1925" />
     <option name="y" value="2184" />
     <option name="width" value="1969" />
     <option name="height" value="1046" />
   </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pytest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pytest" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -34,6 +136,56 @@
         <item itemvalue="Python.tester" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b915f2a-b751-4981-b410-3097b3ec8780" name="Default" comment="" />
+      <created>1531262629588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531262629588</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1925" y="2184" width="1969" height="1046" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.249872" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="DB Browser" />
+      <window_info anchor="bottom" id="DB Execution Console" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32975295" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
